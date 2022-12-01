@@ -110,47 +110,5 @@ class GNNDataset(Dataset):
     def return_features_adj(self):
         return self.features, self.adj
 
-# class GNNDataset(Dataset):
-#     def __init__(self, patient_list, params=dict()):
-#         super(PatientDataset).__init__()
-#         self.dataset_dir = params['dataset_dir']
-#         assert os.path.exists(self.dataset_dir)
-#         self.clinical_dir = os.path.join(self.dataset_dir, 'clinical.csv')
-#         self.patient_list = patient_list
-#         self.clinical_file = pd.read_csv(self.clinical_dir)
-#         self.clinical_columns_list = list(self.clinical_file.columns)   # return a list
-#         self.clinical_columns_list.remove('case_id')
-#         assert len(np.unique(self.clinical_file['case_id'])) == len(self.clinical_file['case_id'])  #ensure no duplicate
-#         self.patho_gene_embedding_dir = params['patho_gene_embedding_dir']
-        
-#     def __getitem__(self, index: int):
-#         case_id = self.patient_list[index]
-#         patho_gene_embedding_name = os.path.join(self.patho_gene_embedding_dir, case_id+'.pt')
-#         patho_gene_embedding = torch.load(patho_gene_embedding_name).squeeze().to('cpu')
-
-#         idx = self.clinical_file[self.clinical_file['case_id'] == case_id].index[0]
-#         clinical_list = [self.clinical_file.loc[idx, column_name] for column_name in self.clinical_columns_list]
-        
-#         all_data = {}
-#         all_data['patho_gene_embedding'] = patho_gene_embedding
-#         all_data['clinical'] = clinical_list
-#         all_data['case_id'] = case_id
-#         return all_data
-
-#     def __len__(self):
-#         return len(self.patient_list)
-    
-#     def return_key_weight_label(self):
-#         # according to self.clinical_file['key_weight_label']
-#         key_label_all = []
-#         for i in range(len(self.patient_list)):
-#             case_id = self.patient_list[i]
-#             idx = self.clinical_file[self.clinical_file['case_id'] == case_id].index[0]
-#             try:
-#                 key_label = self.clinical_file.loc[idx, 'key_weight_label']
-#             except:
-#                 key_label = self.clinical_file.loc[idx, 'label']
-#             key_label_all.append(key_label)
-#         return np.array(key_label_all)
     
 
