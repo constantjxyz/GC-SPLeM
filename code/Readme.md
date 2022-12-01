@@ -37,3 +37,5 @@ Pipeline of our work
 	(c) GC-SPLeM without GNN: delete the two graph convolution layers in './model/model_gnn_survival'
 
 7. Train the incomplete dataset: use settings marked with 'pool'
+
+8. Important tools and their versions: torch 1.7.1+cu101, scikit-learn 1.0.1, openslide-python 1.1.2, scikit-survival 0.16.0, GeForce RTX 2080Ti GPU device, CUDA 10.1
