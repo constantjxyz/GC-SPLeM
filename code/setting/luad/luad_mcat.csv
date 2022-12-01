@@ -1,0 +1,57 @@
+name,setting
+# about dataset
+dataset_dir,/home/xieyuzhang/mtmcat/dataset/survival/luad/inputs
+wsi_feature_dir,/amax/data/nguoshuai/TCGA-LUAD/features/
+split_file,/home/xieyuzhang/mtmcat/dataset/survival/luad/luad_splits/luad_split8.csv
+save_split_dir,/home/xieyuzhang/mtmcat/docs/split_save
+logit_dir,
+ckpt,luad/split8
+task,survival
+
+# about learning details
+cross_validation_folds,1
+epochs,50 
+learning_rate,1e-5
+batch_size,1
+loss_mode,add
+loss_alpha,0.6
+loss_eps,1e-6
+gradient_accumulation,16
+loss_type,ce
+early_stopping,
+stratify,True
+perslide,False
+shuffle_mode,False
+shuffle_scope,False
+shuffle_type,False
+
+# about device
+gpu,3
+rand_seed,0
+use_wandb,True
+
+# about model
+label_dim,2
+gene_dim,32
+num_layers,2
+patho_dim_before_coattn,256
+pathology_mil_mediate,6
+patho_dropout_rate,0
+pathology_mil_mediate
+gene_dim_before_coattn,256
+gene_dropout_rate,0
+gene_set_num,6
+embedding_coattn_dim,256
+pathology_mil_head,8
+pathology_mil_dropout_rate,0
+pathology_mil_mediate_dim,512
+pathology_mil_layer_num,2
+gene_mil_head,8
+gene_mil_dropout_rate,0
+gene_mil_mediate_dim,512
+gene_mil_layer_num,2
+fusion_mediate_embed_dim, 256
+fusion_dropout_rate,0
+embedding_final,64
+sample_class_num,4
+
