@@ -32,7 +32,6 @@ rand_seed,0
 use_wandb,False
 
 # about model,
-label_dim,2
 gene_dim,32
 num_layers,2
 patho_dim_before_coattn,256
