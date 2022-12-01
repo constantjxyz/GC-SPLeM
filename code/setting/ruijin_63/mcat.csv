@@ -2,8 +2,8 @@ name,setting
 # about dataset
 dataset_dir,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/inputs
 wsi_feature_dir,/amax/data/nguoshuai/ruijin/clam_feat/tumor_vs_normal_resnet_features
-ckpt,ruijin_63_gnn_mcat/ce_1e-5_d64_perslide_split2
-split_file,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/ruijin_63_new_splits/ruijin_63_new_split2.csv
+ckpt,ruijin_63_gnn_mcat/ce_1e-5_d64_person_splita
+split_file,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/ruijin_63_new_splits/ruijin_63_new_splita.csv
 save_split_dir,/home/xieyuzhang/mtmcat/docs/split_save
 logit_dir,
 task,survival
@@ -11,7 +11,7 @@ stratify,True
 shuffle_type,False
 shuffle_mode,False
 shuffle_scope,False
-perslide,True
+perslide,False
 multi_instance_mode,all
 
 # about learning details
@@ -26,7 +26,7 @@ loss_alpha,0.6
 loss_eps,1e-6
 
 # about device
-gpu,-1
+gpu,0
 rand_seed,0
 use_wandb,False
 

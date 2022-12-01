@@ -1,16 +1,16 @@
 name,setting
 # about dataset
 dataset_dir,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/inputs
-h5_dataset_dir,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/inputs/embedding/split6/person.h5
+h5_dataset_dir,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/inputs/embedding/splita/person.h5
 patho_gene_embedding_dir,
-ckpt,ruijin_63_gnn/new_split6_ce_person_gcn0_0.4_1e-7s_lr5e-6
-split_file,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/ruijin_63_new_splits/ruijin_63_new_split6.csv
+ckpt,ruijin_63_gnn/new_splita_ce_person_gcn0_0.4_1e-7s_lr5e-6
+split_file,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/ruijin_63_new_splits/ruijin_63_new_splita.csv
 save_split_dir,/home/xieyuzhang/mtmcat/docs/split_save
 logit_dir,/home/xieyuzhang/mtmcat/docs/save_logits
 task,survival
 stratify,True
 shuffle_type,False
-shuffle_mode,Fe-6s
+shuffle_mode,False
 shuffle_scope,False
 perslide,False
 
@@ -28,7 +28,7 @@ loss_eps,1e-7
 # about device
 gpu,3
 rand_seed,0
-use_wandb,True
+use_wandb,False
 
 # about model
 label_dim,2

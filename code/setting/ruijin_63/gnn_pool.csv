@@ -1,10 +1,10 @@
 name,setting
 # about dataset
 dataset_dir,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/inputs
-h5_dataset_dir,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/inputs/embedding/split9/gene_random50%_person.h5
+h5_dataset_dir,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/inputs/embedding/incomplete_dataset/incomplete_dataset_person.h5
 patho_gene_embedding_dir,
-ckpt,ruijin_63_gnn/split9_gene_random50%_ce_person_gcn0_0.4_1e-7s_lr5e-6
-split_file,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/ruijin_63_new_splits/ruijin_63_new_split9.csv
+ckpt,ruijin_63_gnn/incomplete_gene_random50%_ce_person_gcn0_0.4_1e-7s_lr5e-6
+split_file,/home/xieyuzhang/mtmcat/dataset/survival/ruijin_63/ruijin_63_new_splits/incomplete_dataset.csv
 save_split_dir,/home/xieyuzhang/mtmcat/docs/split_save
 logit_dir,/home/xieyuzhang/mtmcat/docs/save_logits
 task,survival

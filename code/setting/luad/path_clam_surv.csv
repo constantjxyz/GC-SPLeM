@@ -2,8 +2,8 @@ name,setting
 # about dataset,
 dataset_dir,/home/xieyuzhang/mtmcat/dataset/survival/luad/inputs
 wsi_feature_dir,/amax/data/nguoshuai/TCGA-LUAD/features/
-ckpt,luad/clam_ce_1e-5_d64_person_split7
-split_file,/home/xieyuzhang/mtmcat/dataset/survival/luad/luad_splits/luad_split7.csv
+ckpt,luad/clam_ce_1e-5_d64_person_splita
+split_file,/home/xieyuzhang/mtmcat/dataset/survival/luad/luad_splits/luad_splita.csv
 save_split_dir,/home/xieyuzhang/mtmcat/docs/split_save
 logit_dir,
 task,path_survival
@@ -13,6 +13,7 @@ shuffle_mode,False
 shuffle_scope,False
 perslide,False
 multi_instance_mode,all
+
 # about learning details,
 cross_validation_folds,1
 epochs,50
@@ -24,10 +25,12 @@ loss_type,ce
 loss_alpha,0.6
 loss_eps,1e-6
 use_inst,True
+
 # about device,
 gpu,3
 rand_seed,0
-use_wandb,True
+use_wandb,False
+
 # about model,
 label_dim,2
 gene_dim,32

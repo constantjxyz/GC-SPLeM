@@ -1,13 +1,13 @@
 name,setting
 # about dataset
 dataset_dir,/home/xieyuzhang/mtmcat/dataset/luad
-h5_dataset_dir,/home/xieyuzhang/mtmcat/dataset/survival/luad/inputs/embedding/split8/split8.h5
+h5_dataset_dir,/home/xieyuzhang/mtmcat/dataset/survival/luad/inputs/embedding/splita/splita.h5
 wsi_feature_dir,/amax/data/nguoshuai/TCGA-LUAD/features/
 patho_gene_embedding_dir,
-split_file,/home/xieyuzhang/mtmcat/dataset/survival/luad/luad_splits/luad_split8.csv
+split_file,/home/xieyuzhang/mtmcat/dataset/survival/luad/luad_splits/luad_splita.csv
 save_split_dir,/home/xieyuzhang/mtmcat/docs/split_save
 logit_dir,
-ckpt,luad/split8_d64_gcn0_0.6_1e-6
+ckpt,luad/splita_d64_gcn0_0.6_1e-6
 task,survival
 
 # about learning details
@@ -29,7 +29,7 @@ shuffle_type,False
 # about device
 gpu,0
 rand_seed,0
-use_wandb,True
+use_wandb,False
 
 # about model
 label_dim,2
