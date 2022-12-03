@@ -1,4 +1,4 @@
-Here we show the pipeline of our work.
+In this folder we show the pipeline of our work.
 
 1. Use the WSI feature extractor. Follow the work of CLAM 'https://github.com/mahmoodlab/CLAM'. Save the extracted feature matrix of WSIs.
 
