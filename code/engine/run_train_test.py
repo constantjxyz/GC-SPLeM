@@ -62,14 +62,14 @@ def run_train_test(train_patient, val_patient, test_patient, params=dict()):
         # run survival test task
         model, best_val_loss = train_survival(train_tensor_dataset, val_tensor_dataset, test_tensor_dataset, params=params)
         _, _, _ = test_survival(test_tensor_dataset, model, mode='test', params=params)
-    elif task == 'stage':
-        # run classification task by using MCAT model (pathology data and gene data)
-        model, best_val_loss = train(train_tensor_dataset, val_tensor_dataset, test_tensor_dataset, params=params)
-        _, _  = test(test_tensor_dataset, model, mode='test', params=params)
-    elif task == 'path_stage':
-        # run classification task by using CLAM model (only pathology data)
-        model, best_val_loss = train_path(train_tensor_dataset, val_tensor_dataset, test_tensor_dataset, params=params)
-        _, _, = test_path(test_tensor_dataset, model, mode='test', params=params)
+    # elif task == 'stage':
+    #     # run classification task by using MCAT model (pathology data and gene data)
+    #     model, best_val_loss = train(train_tensor_dataset, val_tensor_dataset, test_tensor_dataset, params=params)
+    #     _, _  = test(test_tensor_dataset, model, mode='test', params=params)
+    # elif task == 'path_stage':
+    #     # run classification task by using CLAM model (only pathology data)
+    #     model, best_val_loss = train_path(train_tensor_dataset, val_tensor_dataset, test_tensor_dataset, params=params)
+    #     _, _, = test_path(test_tensor_dataset, model, mode='test', params=params)
     elif task == 'path_survival':
         # run survival test task
         model, best_val_loss = train_path_survival(train_tensor_dataset, val_tensor_dataset, test_tensor_dataset, params=params)

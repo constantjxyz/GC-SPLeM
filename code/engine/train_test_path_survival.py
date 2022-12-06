@@ -58,7 +58,6 @@ def train_path_survival(train_dataset, val_dataset, test_dataset, params=dict(),
     #random baseline wandb
     print('now starts the validation process of epoch 0')
     val_loss, val_acc, val_c_index= test_path_survival(val_dataset, model, params=params, mode='val')
-    test_loss, test_acc, test_c_index= test_path_survival(test_dataset, model, params=params, mode='val')
     if params['use_wandb'] == 'True':
         if params['perslide'] == 'False':
             wandb.log({
@@ -66,9 +65,6 @@ def train_path_survival(train_dataset, val_dataset, test_dataset, params=dict(),
                 "Validation Loss": val_loss,
                 "Validation C_index": val_c_index,
                 "Validation Accuracy": val_acc,
-                "Test Loss": test_loss,
-                "Test C_index": test_c_index,
-                "Test Accuracy": test_acc,
                 })
         else:
             wandb.log({
@@ -78,11 +74,6 @@ def train_path_survival(train_dataset, val_dataset, test_dataset, params=dict(),
                 "Validation Accuracy": val_acc,
                 "Validation mean case C_index": val_c_index[1], 
                 "Validation max case C_index": val_c_index[2],
-                "Test Loss": test_loss,
-                "Test slides C_index": test_c_index[0],
-                "Test Accuracy": test_acc,
-                "Test mean case C_index": test_c_index[1], 
-                "Test max case C_index": test_c_index[2],
             })
 
     for epoch in range(1, epochs+1):
@@ -190,18 +181,12 @@ def train_path_survival(train_dataset, val_dataset, test_dataset, params=dict(),
 
         # val_c_index: float number or list[slides_c_index, mean_case_c_inex, max_case_c_index]
         val_loss, val_acc, val_c_index= test_path_survival(val_dataset, model, params=params, mode='val')
-        # test_loss, test_acc, test_c_index= test_path_survival(test_dataset, model, params=params, mode='val')
         if params['perslide'] == 'False':
             print(f'epoch: {str(epoch)}/{str(epochs)}, val loss:{val_loss}, c index:{val_c_index}, val accuracy:{val_acc}')
         else:
             print(f'epoch: {str(epoch)}/{str(epochs)}, val loss:{val_loss}, slides c index:{val_c_index[0]}, val accuracy:{val_acc}')
             print(f'Validation dataset perslide test, mean case test c index {val_c_index[1]}, max case test c index {val_c_index[2]}') 
 
-        '''---------------------------------------------------'''
-        test_loss, test_acc, test_c_index = test_path_survival(test_dataset, model, params=params, mode='val')
-        # print(f'epoch: {str(epoch)}/{str(epochs)}, test loss:{test_loss}')
-        # print('')
-        '''---------------------------------------------------'''
 
         if params['use_wandb'] == 'True':
             if params['perslide'] == 'False':
@@ -213,9 +198,6 @@ def train_path_survival(train_dataset, val_dataset, test_dataset, params=dict(),
                 "Validation Loss": val_loss,
                 "Validation C_index": val_c_index,
                 "Validation Accuracy": val_acc,
-                "Test Loss": test_loss,
-                "Test Accuracy": test_acc,
-                "Test C_index": test_c_index,
                 })
             else:
                 wandb.log({
@@ -230,11 +212,6 @@ def train_path_survival(train_dataset, val_dataset, test_dataset, params=dict(),
                 "Validation Accuracy": val_acc,
                 "Validation mean case C_index": val_c_index[1], 
                 "Validation max case C_index": val_c_index[2],
-                "Test Loss": test_loss,
-                "Test Accuracy": test_acc,
-                "Test slides C_index": test_c_index[0],
-                "Test mean case C_index": test_c_index[1], 
-                "Test max case C_index": test_c_index[2],
                 })
 
         # whether to save the new model
